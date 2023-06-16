@@ -1,15 +1,11 @@
 class Solution {
     public int[] smallerNumbersThanCurrent(int[] nums) {
-        int length = 0;
-        for (int num : nums) {
-            length++;
-        }
         
-        int[] countArray = new int[length];
+        int[] countArray = new int[nums.length];
         
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < nums.length; i++) {
             int count = 0;
-            for (int j = 0; j < length; j++) {
+            for (int j = 0; j < nums.length; j++) {
                 if (j != i && nums[j] < nums[i]) {
                     count++;
                 }
