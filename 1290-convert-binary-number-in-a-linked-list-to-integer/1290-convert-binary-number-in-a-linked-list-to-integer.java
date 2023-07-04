@@ -24,7 +24,6 @@ class Solution {
         int ans = 0;
         
         while (prev.next != null) {
-            System.out.println(prev.val);
             ans += Math.pow(2, exponent) * prev.val;
             exponent++;
             prev = prev.next;
