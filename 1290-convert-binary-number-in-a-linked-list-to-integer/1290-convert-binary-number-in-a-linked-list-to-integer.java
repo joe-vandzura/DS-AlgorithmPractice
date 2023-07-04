@@ -23,13 +23,13 @@ class Solution {
         int exponent = 0;
         int ans = 0;
         
-        while (prev.next != null) {
+        while (prev != null) {
             ans += Math.pow(2, exponent) * prev.val;
             exponent++;
             prev = prev.next;
         }
         
-        ans += Math.pow(2, exponent) * prev.val;
+        // ans += Math.pow(2, exponent) * prev.val;
         
         return ans;
     }
