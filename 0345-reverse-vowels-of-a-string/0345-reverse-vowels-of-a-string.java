@@ -4,12 +4,6 @@ class Solution {
         int end = s.length()-1;
         
         while (start < end) {
-            if (!isVowel(s.charAt(start))) {
-                start++;
-            }
-            if (!isVowel(s.charAt(end))) {
-                end--;
-            }
             if (isVowel(s.charAt(start)) && isVowel(s.charAt(end))) {
                 char startChar = s.charAt(start);
                 char endChar = s.charAt(end);
@@ -17,6 +11,13 @@ class Solution {
                 s = s.substring(0, end) + startChar + s.substring(end + 1);
                 start++;
                 end--;
+            } else {
+                if (!isVowel(s.charAt(start))) {
+                    start++;
+                }
+                if (!isVowel(s.charAt(end))) {
+                    end--;
+                }
             }
         }
         
