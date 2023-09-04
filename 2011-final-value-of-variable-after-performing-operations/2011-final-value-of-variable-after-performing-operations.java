@@ -1,24 +1,15 @@
 class Solution {
     public int finalValueAfterOperations(String[] operations) {
-        int x = 0;
+        int ans = 0;
+        
         for (String operation : operations) {
-            switch (operation) {
-                case "--X":
-                    --x;
-                    break;
-                case "X--":
-                    x--;
-                    break;
-                case "++X":
-                    ++x;
-                    break;
-                case "X++":
-                    x++;
-                    break;
-                default:
-                    continue;
+            if (operation.equals("++X") || operation.equals("X++")) {
+                ans++;
+            } else if (operation.equals("--X") || operation.equals("X--")) {
+                ans--;
             }
         }
-        return x;
+        
+        return ans;
     }
 }
